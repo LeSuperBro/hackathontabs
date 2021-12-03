@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "hackathontabs",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

@@ -1,0 +1,7 @@
+{
+  "name": "hackathontabs",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

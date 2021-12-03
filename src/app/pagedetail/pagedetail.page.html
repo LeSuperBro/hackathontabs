@@ -1,0 +1,50 @@
+
+
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detail de l'hackathon</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<style>
+  ion-title.title-large {
+    font-size: 30px;
+  }
+</style>
+
+<!-- Back button with no text and custom icon -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="" icon="chevron-back-outline"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img src="{{item.image}}">
+    <ion-toolbar>
+      <ion-title size="large">{{item.theme}}</ion-title>
+    </ion-toolbar>
+
+    <h4>
+      {{item.lieu}} - {{item.ville}}
+      <br>
+      {{item.rue}} - {{item.code_postal}}
+    </h4>
+
+    <h4>
+      Commence le : {{fetchDate(item.date_debut)}} à {{item.heure_debut}}
+      <br>
+      Fini le : {{fetchDate(item.date_fin)}} à {{item.heure_fin}}
+      <br>
+      Date limite d'inscription : {{fetchDate(item.date_limite)}}
+      <br>
+      Nombre de places restantes : {{item.nb_places}}
+    </h4>
+    <ion-button expand="block" (click)="presentPopover($event)">Evenements</ion-button>
+
+  </ion-card>
+</ion-content>

@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>  
+    <ion-title>
+      Hackathons
+    </ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Hackathons</ion-title>
+    </ion-toolbar>
+
+    <ion-searchbar
+  [(ngModel)]="myInput"
+  [showCancelButton]="shouldShowCancel"
+  (ionInput)="onInput($event)"
+  (ionCancel)="onCancel($event)">
+</ion-searchbar>
+  </ion-header>
+
+  <ion-item *ngFor="let item of hackathonAff " (click)="MonClick(item)">
+
+    <ion-card>
+
+      <img src="{{item.image}}" />
+      <ion-card-header>
+        <ion-card-title>{{item.theme}}</ion-card-title>
+        <ion-card-subtitle>DLI : {{fetchDate(item.date_limite)}}</ion-card-subtitle>
+      </ion-card-header>
+
+        <ion-card-content>
+          Début : {{fetchDate(item.date_debut)}} à {{item.heure_debut}}
+        <br>
+          Lieu : {{item.ville}}
+        </ion-card-content>
+      
+    </ion-card>
+  </ion-item>
+</ion-content>
+<!--
+<script>
+  const searchbar = document.querySelector('ion-searchbar');
+  const items = Array.from(document.querySelector('ion-card').children);
+
+  searchbar.addEventListener('ionInput', handleInput);
+
+  function handleInput(event) {
+    const query = event.target.value.toLowerCase();
+    requestAnimationFrame(() => {
+      items.forEach(item => {
+        const shouldShow = item.textContent.toLowerCase().indexOf(query) > -1;
+        item.style.display = shouldShow ? 'block' : 'none';
+      });
+    });
+  }
+</script>-->
