@@ -13,7 +13,7 @@ export class Tab1Page {
   hackathonAff : any;
   myInput:any;
   constructor(private router: Router, private http:HttpClient) {
-    this.http.get("http://192.168.3.185:8000/api")
+    this.http.get("http://192.168.3.185:8000/apiH")
     .subscribe(results => {
       console.log(results)
       this.hackathon=results;
