@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationExtras} from '@angular/router';
 
 @Component({
   selector: 'app-ateliers-initiation',
@@ -7,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AteliersInitiationPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  MonClickE(item)
+  {
+    let navigationExtras : NavigationExtras =
+    {
+      state :
+      {
+        param1 : item
+      }
+    }
+    this.router.navigate(['/ateliers-initiation'], navigationExtras);
   }
 
 }

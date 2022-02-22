@@ -14,7 +14,7 @@ export class ListeEvenementPage implements OnInit
 
   ngOnInit() {
   }
-  MonClickE(item)
+  MonClickjqfvhsjvc(item)
   {
     let navigationExtras : NavigationExtras =
     {

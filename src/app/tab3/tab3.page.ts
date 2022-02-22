@@ -45,16 +45,4 @@ onSubmit() {
     }
     else alert("Login ou mdp invalide");
   }
-}
-MonClick(item)
-  {
-    let navigationExtras : NavigationExtras =
-    {
-      state :
-      {
-        param1 : item
-      }
-    }
-    this.router.navigate(['/pagedetail'], navigationExtras);
-  }
-}
+}}
