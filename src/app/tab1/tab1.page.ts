@@ -7,19 +7,22 @@ import { HttpClient} from '@angular/common/http';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss']
 })
+
 export class Tab1Page {
 
   hackathon : any;
   hackathonAff : any;
   myInput:any;
   constructor(private router: Router, private http:HttpClient) {
-    this.http.get("http://192.168.3.36:8000/apiH")
+    this.http.get("http://192.168.3.46:8000/apiH")
     .subscribe(results => {
       console.log(results)
       this.hackathon=results;
       this.hackathonAff=results;
+      console.log(this.hackathonAff)
   })
 }
+
 onInput(e){
   console.log(e.target.value);
   this.hackathonAff=[];
@@ -27,6 +30,7 @@ onInput(e){
       if(elm.ville==e.target.value)this.hackathonAff.push(elm);
   })
 }
+
 onCancel(e){
   console.log(e)
   this.hackathonAff=this.hackathon
@@ -37,11 +41,12 @@ MonClick(item)
     {
       state :
       {
-        param1 : item
+        param1 : item,
       }
     }
     this.router.navigate(['/pagedetail'], navigationExtras);
   }
+  
   fetchDate(e) {
     //console.log(e)
     return new Date(e).toLocaleDateString("en-GB").substring(0, 10);

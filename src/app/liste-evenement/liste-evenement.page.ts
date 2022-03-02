@@ -13,17 +13,4 @@ export class ListeEvenementPage implements OnInit
   }
 
   ngOnInit() {
-  }
-  MonClickjqfvhsjvc(item)
-  {
-    let navigationExtras : NavigationExtras =
-    {
-      state :
-      {
-        param1 : item
-      }
-    }
-    this.router.navigate(['/liste-evenement'], navigationExtras);
-  }
-
-}
+  }}

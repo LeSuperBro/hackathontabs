@@ -21,21 +21,17 @@
   </ion-header>
 
   <ion-item *ngFor="let item of hackathonAff " (click)="MonClick(item)">
-
     <ion-card>
-
       <img src="{{item.image}}" />
       <ion-card-header>
         <ion-card-title>{{item.theme}}</ion-card-title>
         <ion-card-subtitle>DLI : {{fetchDate(item.date_limite)}}</ion-card-subtitle>
       </ion-card-header>
-
         <ion-card-content>
           Début : {{fetchDate(item.date_debut)}} à {{item.heure_debut}}
         <br>
           Lieu : {{item.ville}}
         </ion-card-content>
-      
     </ion-card>
   </ion-item>
 </ion-content>

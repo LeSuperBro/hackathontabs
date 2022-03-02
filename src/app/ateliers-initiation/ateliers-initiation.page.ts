@@ -11,18 +11,4 @@ export class AteliersInitiationPage implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-  }
-
-  MonClickE(item)
-  {
-    let navigationExtras : NavigationExtras =
-    {
-      state :
-      {
-        param1 : item
-      }
-    }
-    this.router.navigate(['/ateliers-initiation'], navigationExtras);
-  }
-
-}
+  }}
