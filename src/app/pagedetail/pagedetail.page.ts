@@ -21,8 +21,7 @@ export class PagedetailPage {
     this.activeRoute.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.idev = this.router.getCurrentNavigation().extras.state.param1;
-        this.item = 
-          this.router.getCurrentNavigation().extras.state.param1;
+        this.item = this.router.getCurrentNavigation().extras.state.param1;
       }
     })
     this.http.get("http://192.168.3.46:8000/apiE/"+this.router.getCurrentNavigation().extras.state.param1.id_hackathon)
@@ -42,6 +41,19 @@ export class PagedetailPage {
     this.evenement.forEach(elm =>{
         if(elm.ville==e.target.value)this.evenementAff.push(elm);
     })
+  }
+
+  goToPage(e){
+    console.log(e);
+    let navigationExtras : NavigationExtras =
+    {
+      state :
+      {
+        param1 : e,
+      }
+    }
+    this.router.navigate(['/formulaire-inscription'], navigationExtras);
+
   }
 
   onCancel(e){

@@ -50,17 +50,17 @@
 <h1>Liste des évènements de cet Hackathon</h1>
 
     <!--Liste des evenements avec des cards en fonction de l'hackathon-->
-    <ion-item *ngFor="let item of evenementAff" >
+    <ion-item *ngFor="let itm of evenementAff" >
       <ion-card expand="block">
         <ion-card-header>
-          <ion-card-title>{{item.Theme}}</ion-card-title>
+          <ion-card-title>{{itm.Theme}}</ion-card-title>
         </ion-card-header>
           <ion-card-content>
-            Le {{fetchDate(item.Date)}}
+            Le {{fetchDate(itm.Date)}}
           <br>
-            de {{item.HeureDebut}} à {{item.HeureFin}}
+            de {{itm.HeureDebut}} à {{itm.HeureFin}}
           </ion-card-content>
-          <ion-button expand="block" fill="outline" href="http://localhost:8100/formulaire-inscription/{{idEvenement}}">S'inscrire</ion-button>
+          <ion-button expand="block" fill="outline" (click)="goToPage(itm.IdEvenement)" >S'inscrire</ion-button>
       </ion-card>
     </ion-item>
 
