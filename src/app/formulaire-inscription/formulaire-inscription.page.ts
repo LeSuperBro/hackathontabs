@@ -12,7 +12,7 @@ import {NavigationExtras} from '@angular/router';
 })
 export class FormulaireInscriptionPage {
 
-  user={nom:"",prenom:"",email:""};
+  user={IdEvenement:"",Nom:"",Prenom:"",Mail:""};
   item="";
 
   constructor(private router: Router, private activeRoute : ActivatedRoute,public popoverController: PopoverController, private http:HttpClient) {
@@ -23,12 +23,10 @@ export class FormulaireInscriptionPage {
     })
   }
   logForm(){
+    this.user.IdEvenement =this.item;
     console.log(this.user);
-    this.http.post("http://192.168.3.46:8000/apiE/"+this.item, this.item)
-    this.http.post("http://192.168.3.46:8000/apiE/"+this.user.nom, this.user)
-    this.http.post("http://192.168.3.46:8000/apiE/"+this.user.nom, this.user)
-    this.http.post("http://192.168.3.46:8000/apiE/"+this.user.nom, this.user)
-
+    //let data = {nom:this.user.nom,prenom:this.user.prenom,mail:this.user.mail};
+    this.http.post("http://192.168.3.46:8000/apiE/participant",this.user)
     .subscribe(results => {
       console.log("Ca fonctionne");
     })
