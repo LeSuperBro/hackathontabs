@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { PopoverController } from '@ionic/angular';
 import { SettingComponent } from '../setting/setting.component';
 import {NavigationExtras} from '@angular/router';
+import {Storage} from '@ionic/storage';
 
 @Component({
   selector: 'app-formulaire-inscription',
@@ -15,7 +16,7 @@ export class FormulaireInscriptionPage {
   user={IdEvenement:"",Nom:"",Prenom:"",Mail:""};
   item="";
 
-  constructor(private router: Router, private activeRoute : ActivatedRoute,public popoverController: PopoverController, private http:HttpClient) {
+  constructor(private router: Router, private activeRoute : ActivatedRoute,public popoverController: PopoverController, private http:HttpClient, private storage: Storage) {
     this.activeRoute.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.item = this.router.getCurrentNavigation().extras.state.param1;
@@ -30,6 +31,7 @@ export class FormulaireInscriptionPage {
     .subscribe(results => {
       console.log("Ca fonctionne");
     })
+    this.storage.set('user',this.user);
   }
 
 }

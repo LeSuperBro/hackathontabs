@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, NavigationExtras} from '@angular/router';
 import { HttpClient} from '@angular/common/http';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-tab1',
@@ -13,7 +14,19 @@ export class Tab1Page {
   hackathon : any;
   hackathonAff : any;
   myInput:any;
+  myForm:FormGroup;
+  submitted=false;
+
   constructor(private router: Router, private http:HttpClient) {
+    // this.nativeStorage.getItem('user')
+    //   .then(
+    //     data => {
+    //       console.log(data);
+    //       // if(data){remplir les champs}
+    //     }
+    //     error => console.error(error)
+    //   );
+
     this.http.get("http://192.168.3.46:8000/apiH")
     .subscribe(results => {
       console.log(results)
@@ -22,6 +35,8 @@ export class Tab1Page {
       console.log(this.hackathonAff)
   })
 }
+
+
 
 onInput(e){
   console.log(e.target.value);
