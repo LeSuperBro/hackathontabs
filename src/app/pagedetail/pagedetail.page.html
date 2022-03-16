@@ -23,7 +23,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
+  <ion-card class="cardDetail_color">
     <img src="{{item.image}}">
     <ion-toolbar>
       <ion-title size="large">{{item.theme}}</ion-title>
@@ -51,7 +51,7 @@
 
     <!--Liste des evenements avec des cards en fonction de l'hackathon-->
     <ion-item *ngFor="let itm of evenementAff" >
-      <ion-card expand="block">
+      <ion-card expand="block" class="cardEvenement_color">
         <ion-card-header>
           <ion-card-title>{{itm.Theme}}</ion-card-title>
         </ion-card-header>
