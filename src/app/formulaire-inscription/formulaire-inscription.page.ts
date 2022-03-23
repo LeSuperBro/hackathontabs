@@ -17,6 +17,9 @@ export class FormulaireInscriptionPage {
   item="";
 
   constructor(private router: Router, private activeRoute : ActivatedRoute,public popoverController: PopoverController, private http:HttpClient, private storage: Storage) {
+    this.storage.get('user').then(data=>{
+      console.log(data)
+    })
     this.activeRoute.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.item = this.router.getCurrentNavigation().extras.state.param1;
