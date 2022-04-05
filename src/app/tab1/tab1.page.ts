@@ -50,6 +50,13 @@ onCancel(e){
   console.log(e)
   this.hackathonAff=this.hackathon
 }
+
+MonClick2()
+{
+  let navigationExtras : NavigationExtras
+  this.router.navigate(['/geoloc-hack'], navigationExtras);
+}
+
 MonClick(item)
   {
     let navigationExtras : NavigationExtras =

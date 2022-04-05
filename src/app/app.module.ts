@@ -16,6 +16,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { IonicStorageModule } from '@ionic/storage';
 
+// geolocation and native-geocoder
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -34,6 +37,7 @@ import { IonicStorageModule } from '@ionic/storage';
       registrationStrategy: 'registerWhenStable:30000'
     })],
   providers: [
+    Geolocation,
     {
     provide: RouteReuseStrategy,
     useClass: IonicRouteStrategy

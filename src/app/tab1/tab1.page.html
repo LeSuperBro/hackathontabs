@@ -17,8 +17,15 @@
   [showCancelButton]="shouldShowCancel"
   (ionInput)="onInput($event)"
   (ionCancel)="onCancel($event)">
+  <h7>Localisation par ville</h7>
 </ion-searchbar>
   </ion-header>
+
+  <ion-item (click)="MonClick2()">
+    <ion-card>
+      <img src="https://www.lifewire.com/thmb/6DrtO40qnoND20afLabJ8MHUN4w=/1614x1105/filters:fill(auto,1)/Maplocation_-5a492a4e482c52003601ea25.jpg"/>
+    </ion-card>
+  </ion-item>
 
   <ion-item *ngFor="let item of hackathonAff " (click)="MonClick(item)">
     <ion-card class="card_color">

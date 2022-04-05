@@ -46,6 +46,10 @@ const routes: Routes = [
   {
     path: 'conferences',
     loadChildren: () => import('./conferences/conferences.module').then( m => m.ConferencesPageModule)
+  },
+  {
+    path: 'geoloc-hack',
+    loadChildren: () => import('./geoloc-hack/geoloc-hack.module').then( m => m.GeolocHackPageModule)
   }
 ];
 
