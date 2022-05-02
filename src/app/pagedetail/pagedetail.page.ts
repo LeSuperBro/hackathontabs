@@ -4,6 +4,7 @@ import { PopoverController } from '@ionic/angular';
 import { SettingComponent } from '../setting/setting.component';
 import { HttpClient} from '@angular/common/http';
 import {NavigationExtras} from '@angular/router';
+import { SocialSharing } from '@awesome-cordova-plugins/social-sharing/ngx';
 
 @Component({
   selector: 'app-pagedetail',
@@ -17,7 +18,7 @@ export class PagedetailPage {
   myInput:any;
   item="";
   idev="";
-  constructor(private router: Router, private activeRoute : ActivatedRoute,public popoverController: PopoverController, private http:HttpClient) {
+  constructor(private router: Router, private socialSharing: SocialSharing, private activeRoute : ActivatedRoute,public popoverController: PopoverController, private http:HttpClient) {
     this.activeRoute.queryParams.subscribe(params => {
       if (this.router.getCurrentNavigation().extras.state) {
         this.idev = this.router.getCurrentNavigation().extras.state.param1;
@@ -77,5 +78,20 @@ export class PagedetailPage {
 
     const { role } = await popover.onDidDismiss();
     console.log('onDidDismiss resolved with role', role);
+  }
+  clickShare(){
+          // Check if sharing via email is supported
+      this.socialSharing.canShareViaEmail().then(() => {
+        // Sharing via email is possible
+      }).catch(() => {
+        // Sharing via email is not possible
+      });
+
+      // Share via email
+      this.socialSharing.shareViaEmail('Body', 'Subject', ['recipient@example.org']).then(() => {
+        // Success!
+      }).catch(() => {
+        // Error!
+      });
   }
 }

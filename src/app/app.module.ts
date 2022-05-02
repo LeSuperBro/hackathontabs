@@ -19,6 +19,12 @@ import { IonicStorageModule } from '@ionic/storage';
 // geolocation and native-geocoder
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 
+//Pour partager les hackathons
+import { SocialSharing } from '@awesome-cordova-plugins/social-sharing/ngx';
+
+// //Pour ajouter à l'agenda
+// import { Calendar } from '@awesome-cordova-plugins/calendar/ngx';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -37,7 +43,9 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
       registrationStrategy: 'registerWhenStable:30000'
     })],
   providers: [
+    SocialSharing,
     Geolocation,
+    // Calendar,
     {
     provide: RouteReuseStrategy,
     useClass: IonicRouteStrategy
