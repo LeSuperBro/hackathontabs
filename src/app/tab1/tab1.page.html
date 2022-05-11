@@ -3,7 +3,6 @@
     <ion-title>
       Hackathons
     </ion-title>
-    
   </ion-toolbar>
 </ion-header>
 
@@ -18,25 +17,28 @@
   [showCancelButton]="shouldShowCancel"
   (ionInput)="onInput($event)"
   (ionCancel)="onCancel($event)">
+  <h7>Localisation par ville</h7>
 </ion-searchbar>
   </ion-header>
 
-  <ion-item *ngFor="let item of hackathonAff " (click)="MonClick(item)">
-
+  <ion-item (click)="MonClick2()">
     <ion-card>
+      <img src="https://www.lifewire.com/thmb/6DrtO40qnoND20afLabJ8MHUN4w=/1614x1105/filters:fill(auto,1)/Maplocation_-5a492a4e482c52003601ea25.jpg"/>
+    </ion-card>
+  </ion-item>
 
+  <ion-item *ngFor="let item of hackathonAff " (click)="MonClick(item)">
+    <ion-card class="card_color">
       <img src="{{item.image}}" />
       <ion-card-header>
         <ion-card-title>{{item.theme}}</ion-card-title>
         <ion-card-subtitle>DLI : {{fetchDate(item.date_limite)}}</ion-card-subtitle>
       </ion-card-header>
-
         <ion-card-content>
           Début : {{fetchDate(item.date_debut)}} à {{item.heure_debut}}
         <br>
           Lieu : {{item.ville}}
         </ion-card-content>
-      
     </ion-card>
   </ion-item>
 </ion-content>

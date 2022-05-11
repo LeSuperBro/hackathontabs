@@ -38,6 +38,18 @@ const routes: Routes = [
   {
     path: 'formulaire-inscription',
     loadChildren: () => import('./formulaire-inscription/formulaire-inscription.module').then( m => m.FormulaireInscriptionPageModule)
+  },
+  {
+    path: 'ateliers-initiation',
+    loadChildren: () => import('./ateliers-initiation/ateliers-initiation.module').then( m => m.AteliersInitiationPageModule)
+  },
+  {
+    path: 'conferences',
+    loadChildren: () => import('./conferences/conferences.module').then( m => m.ConferencesPageModule)
+  },
+  {
+    path: 'geoloc-hack',
+    loadChildren: () => import('./geoloc-hack/geoloc-hack.module').then( m => m.GeolocHackPageModule)
   }
 ];
 

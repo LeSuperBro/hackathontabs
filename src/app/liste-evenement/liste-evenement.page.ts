@@ -6,24 +6,11 @@ import { Router, NavigationExtras} from '@angular/router';
   templateUrl: './liste-evenement.page.html',
   styleUrls: ['./liste-evenement.page.scss'],
 })
-export class ListeEvenementPage implements OnInit {
-
+export class ListeEvenementPage implements OnInit
+{
   constructor(private router: Router) {
    
   }
 
   ngOnInit() {
-  }
-  MonClickE(item)
-  {
-    let navigationExtras : NavigationExtras =
-    {
-      state :
-      {
-        param1 : item
-      }
-    }
-    this.router.navigate(['/liste-evenement'], navigationExtras);
-  }
-
-}
+  }}

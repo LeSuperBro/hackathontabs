@@ -25,3 +25,11 @@
   #container a {
     text-decoration: none;
   }
+
+.card_color{
+  //background-color: #8c8c8c;
+  --background: linear-gradient(
+  #eec0c6,
+  #7ee8fa
+  );
+}

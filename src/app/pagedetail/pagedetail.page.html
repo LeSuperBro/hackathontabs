@@ -1,6 +1,3 @@
-
-
-
 <ion-header>
   <ion-toolbar>
     <ion-title>Detail de l'hackathon</ion-title>
@@ -10,6 +7,9 @@
 <style>
   ion-title.title-large {
     font-size: 30px;
+  }
+  h1{
+    text-align: center;
   }
 </style>
 
@@ -23,7 +23,7 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
+  <ion-card class="cardDetail_color">
     <img src="{{item.image}}">
     <ion-toolbar>
       <ion-title size="large">{{item.theme}}</ion-title>
@@ -44,7 +44,26 @@
       <br>
       Nombre de places restantes : {{item.nb_places}}
     </h4>
-    <ion-button expand="block" (click)="presentPopover($event)">Evenements</ion-button>
-
+    <!--<ion-button expand="block" (click)="presentPopover($event)">Evenements</ion-button>-->
+    <h1><ion-icon name="calendar-sharp"></ion-icon>
+      <ion-icon name="arrow-redo-outline" (click)="clickShare()"></ion-icon></h1>
   </ion-card>
+
+<h1>Liste des évènements de cet Hackathon</h1>
+
+    <!--Liste des evenements avec des cards en fonction de l'hackathon-->
+    <ion-item *ngFor="let itm of evenementAff" >
+      <ion-card expand="block" class="cardEvenement_color">
+        <ion-card-header>
+          <ion-card-title>{{itm.Theme}}</ion-card-title>
+        </ion-card-header>
+          <ion-card-content>
+            Le {{fetchDate(itm.Date)}}
+          <br>
+            de {{itm.HeureDebut}} à {{itm.HeureFin}}
+          </ion-card-content>
+          <ion-button expand="block" fill="outline" (click)="goToPage(itm.IdEvenement)" >S'inscrire</ion-button>
+      </ion-card>
+    </ion-item>
+
 </ion-content>
