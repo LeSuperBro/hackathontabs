@@ -25,7 +25,7 @@ export class PagedetailPage {
         this.item = this.router.getCurrentNavigation().extras.state.param1;
       }
     })
-    this.http.get("http://192.168.3.26:8000/apiE/"+this.router.getCurrentNavigation().extras.state.param1.id_hackathon)
+    this.http.get("http://localhost:8000/apiE/"+this.router.getCurrentNavigation().extras.state.param1.id_hackathon)
     .subscribe(results => {
       console.log(results)
       this.evenement=results;

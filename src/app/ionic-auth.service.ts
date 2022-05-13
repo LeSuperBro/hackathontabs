@@ -20,7 +20,7 @@ export class IonicAuthService {
           res =>{ 
             console.log(res);
             //http post ->
-            this.http.post("http://192.168.3.185:8000/api/participant",value).subscribe((data)=>{
+            this.http.post("http://localhost:8000/api/participant",value).subscribe((data)=>{
               resolve(res);
             })
             

@@ -29,8 +29,9 @@ export class FormulaireInscriptionPage {
   logForm(){
     this.user.IdEvenement =this.item;
     console.log(this.user);
+    console.log("test");
     //let data = {nom:this.user.nom,prenom:this.user.prenom,mail:this.user.mail};
-    this.http.post("http://192.168.3.26:8000/apiE/participant",this.user)
+    this.http.post("http://localhost:8000/apiE/participant",this.user)
     .subscribe(results => {
       console.log("Ca fonctionne");
     })

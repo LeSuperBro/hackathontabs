@@ -27,7 +27,7 @@ export class Tab1Page {
     //     error => console.error(error)
     //   );
 
-    this.http.get("http://192.168.3.26:8000/apiH")
+    this.http.get("http://localhost:8000/apiH")
     .subscribe(results => {
       console.log(results)
       this.hackathon=results;
